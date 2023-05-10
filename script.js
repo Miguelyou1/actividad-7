@@ -6,3 +6,7 @@ function pedirNumero() {
 }
 function comprobarNumero(numero) {
     intentos+;
+    if (numero === numeroAdivinar) {
+        alert(`Has acertado el número en ${intentos} intentos.`);
+    return true;
+} 
