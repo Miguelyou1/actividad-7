@@ -8,5 +8,11 @@ let intentosRestantes = intentosMaximos;
 // Función para comprobar si el número es correcto
 function comprobarNumero(numero) {
     if (numero === numeroAleatorio) {
-      console.log("¡Felicidades! Has acertado el número.");
-      return true;
+        console.log("¡Felicidades! Has acertado el número.");
+        return true;
+    } else {
+        intentosRestantes--;
+        console.log(`Lo siento, el número es ${numero < numeroAleatorio ? "mayor" : "menor"} al que has introducido. Te quedan ${intentosRestantes} intentos.`);
+        return false;
+    }
+}
