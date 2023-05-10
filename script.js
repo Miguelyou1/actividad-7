@@ -13,3 +13,6 @@ function comprobarNumero(numero) {
 else if (numero < numeroAdivinar) {
     alert('El numero es menor.');
 }
+else {
+    alert('El numero es mayor.');
+  }
