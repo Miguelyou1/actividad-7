@@ -16,3 +16,10 @@ function comprobarNumero(numero) {
         return false;
     }
 }
+// Pedir al usuario que adivine el número hasta que acierte o se acaben los intentos
+while (intentosRestantes > 0) {
+    const numeroUsuario = parseInt(prompt(`Introduce un número entre 1 y 15. Te quedan ${intentosRestantes} intentos.`));
+    if (comprobarNumero(numeroUsuario)) {
+      break;
+    }
+  }
