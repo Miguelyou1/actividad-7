@@ -1,6 +1,9 @@
 // Generar un número aleatorio entre 1 y 15
 const numeroAleatorio = Math.floor(Math.random() * 15) + 1;
 
+function pedirNumero() {
+    const numero = prompt('Introduzca un número entre 1 y 15, tienes 3 intentos');
+
 // Establecer el número máximo de intentos y el número actual de intentos
 const numIntentosMaximo = 3;
 let numIntentosActual = 0;
