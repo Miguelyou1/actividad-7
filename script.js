@@ -19,4 +19,4 @@ else {
 if (intentos === 3 && numero != numeroAdivinar) {
     alert(`Se acabaron tus intentos, el numero era ${ numeroAdivinar }.`);
   }
-  
+  return false;
