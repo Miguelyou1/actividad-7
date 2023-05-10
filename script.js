@@ -1,5 +1,5 @@
 const numeroAdivinar = Math.floor(Math.random() * 15) + 1;
-let intentos = 0;
+let intentos = 3;
 function pedirNumero() {
     const numero = prompt('Introduzca un numero entre 1 y 15, tienes 3 intentos');
     return parseInt(numero);
