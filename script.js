@@ -1,31 +1,35 @@
-// Generar número aleatorio entre 1 y 15
+// Generar un número aleatorio entre 1 y 15
 const numeroAleatorio = Math.floor(Math.random() * 15) + 1;
 
-// Definir número de intentos disponibles
-const intentosMaximos = 3;
-let intentosRestantes = intentosMaximos;
+// Establecer el número máximo de intentos y el número actual de intentos
+const numIntentosMaximo = 3;
+let numIntentosActual = 0;
 
-// Función para comprobar si el número es correcto
-function comprobarNumero(numero) {
-  if (numero === numeroAleatorio) {
-    console.log("¡Felicidades! Has acertado el número.");
+// Función para verificar si el usuario ha adivinado el número
+function verificarAdivinanza(numeroAdivinanza) {
+  numIntentosActual++;
+  
+  if (numeroAdivinanza === numeroAleatorio) {
+    console.log("¡Felicidades! Has adivinado el número.");
     return true;
+  } else if (numIntentosActual === numIntentosMaximo) {
+    console.log("Lo siento, has perdido. El número era " + numeroAleatorio + ".");
+    return false;
   } else {
-    intentosRestantes--;
-    console.log(`Lo siento, el número es ${numero < numeroAleatorio ? "mayor" : "menor"} al que has introducido. Te quedan ${intentosRestantes} intentos.`);
+    const pista = numeroAdivinanza > numeroAleatorio ? "menor" : "mayor";
+    console.log("Incorrecto. El número que buscas es " + pista + " al que has introducido. Te quedan " + (numIntentosMaximo - numIntentosActual) + " intentos.");
     return false;
   }
 }
 
-// Pedir al usuario que adivine el número hasta que acierte o se acaben los intentos
-while (intentosRestantes > 0) {
-  const numeroUsuario = parseInt(prompt(`Introduce un número entre 1 y 15. Te quedan ${intentosRestantes} intentos.`));
-  if (comprobarNumero(numeroUsuario)) {
+// Pedir al usuario que adivine el número
+console.log("Bienvenido al juego. Adivina un número entre 1 y 15. Tienes " + numIntentosMaximo + " intentos.");
+
+while (numIntentosActual < numIntentosMaximo) {
+  const adivinanza = parseInt(prompt("Intento #" + (numIntentosActual + 1) + ":"));
+  
+  if (verificarAdivinanza(adivinanza)) {
     break;
   }
 }
 
-// Si se han agotado los intentos, informar al usuario de que ha perdido
-if (intentosRestantes === 0) {
-  console.log(`Lo siento, has perdido. El número era ${numeroAleatorio}.`);
-}
