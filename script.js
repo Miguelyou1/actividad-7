@@ -20,6 +20,10 @@ function comprobarNumero(numero) {
 while (intentosRestantes > 0) {
     const numeroUsuario = parseInt(prompt(`Introduce un número entre 1 y 15. Te quedan ${intentosRestantes} intentos.`));
     if (comprobarNumero(numeroUsuario)) {
-      break;
+        break;
     }
-  }
+}
+// Si se han agotado los intentos, informar al usuario de que ha perdido
+if (intentosRestantes === 0) {
+    console.log(`Lo siento, has perdido. El número era ${numeroAleatorio}.`);
+}
