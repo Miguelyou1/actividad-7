@@ -7,6 +7,9 @@ function pedirNumero() {
 function comprobarNumero(numero) {
     intentos+;
     if (numero === numeroAdivinar) {
-        alert(`Has acertado el número en ${intentos} intentos.`);
+        alert(`Has acertado el numero en ${intentos} intentos.`);
     return true;
 } 
+else if (numero < numeroAdivinar) {
+    alert('El numero es menor.');
+}
