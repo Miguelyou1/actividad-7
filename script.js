@@ -1,6 +1,6 @@
 // Generar un número aleatorio entre 1 y 15
 const numeroAleatorio = Math.floor(Math.random() * 15) + 1;
-console.log(numeroAleatorio)
+
 
 // Establecer el número máximo de intentos y el número actual de intentos
 const numIntentosMaximo = 3;
