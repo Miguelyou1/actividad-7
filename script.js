@@ -1,3 +1,5 @@
+// Pedir al usuario que adivine el número
+console.log("Bienvenido al juego. Adivina un número entre 1 y 15. Tienes " + numIntentosMaximo + " intentos.");
 // Generar un número aleatorio entre 1 y 15
 const numeroAleatorio = Math.floor(Math.random() * 15) + 1;
 
@@ -23,8 +25,6 @@ function verificarAdivinanza(numeroAdivinanza) {
   }
 }
 
-// Pedir al usuario que adivine el número
-console.log("Bienvenido al juego. Adivina un número entre 1 y 15. Tienes " + numIntentosMaximo + " intentos.");
 
 while (numIntentosActual < numIntentosMaximo) {
   const adivinanza = parseInt(prompt("Intento #" + (numIntentosActual + 1) + ":"));
