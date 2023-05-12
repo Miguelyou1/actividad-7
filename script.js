@@ -8,16 +8,17 @@ let numIntentosActual = 0;
 // Función para verificar si el usuario ha adivinado el número
 function verificarAdivinanza(numeroAdivinanza) {
   numIntentosActual++;
+  var men
   
   if (numeroAdivinanza === numeroAleatorio) {
-    console.log("¡Felicidades! Has adivinado el número.");
+    men = console.log("¡Felicidades! Has adivinado el número.");
     return true;
   } else if (numIntentosActual === numIntentosMaximo) {
-    console.log("Lo siento, has perdido. El número era " + numeroAleatorio + ".");
+    men = console.log("Lo siento, has perdido. El número era " + numeroAleatorio + ".");
     return false;
   } else {
     const pista = numeroAdivinanza > numeroAleatorio ? "menor" : "mayor";
-    console.log("Incorrecto. El número que buscas es " + pista + " al que has introducido. Te quedan " + (numIntentosMaximo - numIntentosActual) + " intentos.");
+    men = console.log("Incorrecto. El número que buscas es " + pista + " al que has introducido. Te quedan " + (numIntentosMaximo - numIntentosActual) + " intentos.");
     return false;
   }
 }
